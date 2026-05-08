@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignHub - Products</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+/* =========================================
+   CINEMATIC GLASS DESIGN SYSTEM
+   ========================================= */
+body.cinematic-glass-theme {
+    background-color: #050508 !important;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 40%) !important;
+    background-attachment: fixed !important;
+    color: #f8fafc !important;
+}
+
+.cinematic-glass-theme .card, 
+.cinematic-glass-theme .panel, 
+.cinematic-glass-theme .glass-panel, 
+.cinematic-glass-theme .navbar, 
+.cinematic-glass-theme .nav, 
+.cinematic-glass-theme footer,
+.cinematic-glass-theme .footer,
+.cinematic-glass-theme .product-card,
+.cinematic-glass-theme .service-card,
+.cinematic-glass-theme .feature-card,
+.cinematic-glass-theme .stat-card,
+.cinematic-glass-theme .modal-content,
+.cinematic-glass-theme .about-image {
+    background: rgba(15, 15, 25, 0.55) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    border-radius: 16px !important;
+    color: #f1f5f9 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.cinematic-glass-theme .card:hover, 
+.cinematic-glass-theme .product-card:hover, 
+.cinematic-glass-theme .service-card:hover, 
+.cinematic-glass-theme .feature-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.cinematic-glass-theme h1, 
+.cinematic-glass-theme h2, 
+.cinematic-glass-theme h3,
+.cinematic-glass-theme h4,
+.cinematic-glass-theme h5,
+.cinematic-glass-theme h6 {
+    color: #ffffff !important;
+    letter-spacing: -0.02em !important;
+}
+
+.cinematic-glass-theme p, 
+.cinematic-glass-theme span, 
+.cinematic-glass-theme a,
+.cinematic-glass-theme li {
+    color: #cbd5e1 !important;
+}
+
+.cinematic-glass-theme button, 
+.cinematic-glass-theme .btn,
+.cinematic-glass-theme .btn-primary {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(168, 85, 247, 0.8)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.cinematic-glass-theme button:hover, 
+.cinematic-glass-theme .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.cinematic-glass-theme input, 
+.cinematic-glass-theme textarea, 
+.cinematic-glass-theme select {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+}
+.cinematic-glass-theme input:focus, 
+.cinematic-glass-theme textarea:focus {
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    outline: none !important;
+}
+</style>
+</head>
+<body class="cinematic-glass-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>DesignHub</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="designs.html">Interior Designs</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Products</h1>
+            <p>Discover beautiful furniture and home accessories for every room</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="window.location.href='designs.html'">View Designs</button>
+                <button class="btn-secondary" onclick="window.location.href='about.html'">About Us</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Shop Our Collection</h2>
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="furniture">Furniture</button>
+                <button class="filter-btn" data-filter="lighting">Lighting</button>
+                <button class="filter-btn" data-filter="decor">Home Decor</button>
+                <button class="filter-btn" data-filter="textiles">Textiles</button>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cart-total">0.00</span></h3>
+            </div>
+            <div class="cart-actions">
+                <button class="btn-secondary" id="continue-shopping">Continue Shopping</button>
+                <button class="btn-primary" id="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="first-name" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="last-name" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="checkout-email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="address" placeholder="Address" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="city" placeholder="City" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="zip-code" placeholder="Zip Code" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="debit">Debit Card</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="terms" required>
+                        I agree to the terms and conditions
+                    </label>
+                </div>
+                <div class="checkout-total">
+                    <h3>Order Total: $<span id="checkout-total">0.00</span></h3>
+                </div>
+                <button type="submit" class="btn-primary">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>Order Successful!</h2>
+                <p>Thank you for your order. We'll contact you soon with the details.</p>
+                <button class="btn-primary" id="success-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="product-detail-modal" class="modal">
+        <div class="modal-content product-detail-content">
+            <span class="close-btn" id="product-detail-close">&times;</span>
+            <div class="product-detail-grid">
+                <div class="product-detail-image">
+                    <div class="image-gallery">
+                        <div class="main-image">
+                            <img id="detail-image" src="" alt="">
+                            <div class="image-overlay">
+                                <button class="zoom-btn" onclick="zoomImage()">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-thumbnails">
+                            <button class="thumb-btn active" onclick="changeImage(0)">
+                                <img src="" alt="">
+                            </button>
+                            <button class="thumb-btn" onclick="changeImage(1)">
+                                <img src="" alt="">
+                            </button>
+                            <button class="thumb-btn" onclick="changeImage(2)">
+                                <img src="" alt="">
+                            </button>
+                            <button class="thumb-btn" onclick="changeImage(3)">
+                                <img src="" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <div class="feature-badge">
+                            <i class="fas fa-leaf"></i>
+                            <span>Eco-Friendly</span>
+                        </div>
+                        <div class="feature-badge">
+                            <i class="fas fa-handshake"></i>
+                            <span>Handcrafted</span>
+                        </div>
+                        <div class="feature-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>Premium Quality</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-detail-info">
+                    <div class="product-meta">
+                        <span class="product-category" id="detail-category"></span>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                            <span class="review-count">• 128 Reviews</span>
+                        </div>
+                    </div>
+                    <h2 id="detail-name"></h2>
+                    <div class="product-price-container">
+                        <div class="price-current" id="detail-price"></div>
+                        <div class="price-original">$999.99</div>
+                        <div class="price-savings">Save 15%</div>
+                    </div>
+                    <p id="detail-description"></p>
+                    
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Color:</label>
+                            <div class="color-options">
+                                <button class="color-btn active" data-color="natural" style="background: linear-gradient(135deg, #d2b48c, #8b5a2b)">
+                                    <span class="color-tooltip">Natural Wood</span>
+                                </button>
+                                <button class="color-btn" data-color="black" style="background: linear-gradient(135deg, #2c3e50, #34495e)">
+                                    <span class="color-tooltip">Matte Black</span>
+                                </button>
+                                <button class="color-btn" data-color="white" style="background: linear-gradient(135deg, #ecf0f1, #bdc3c7)">
+                                    <span class="color-tooltip">Pure White</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <label>Size:</label>
+                            <div class="size-options">
+                                <button class="size-btn active" data-size="small">Small</button>
+                                <button class="size-btn" data-size="medium">Medium</button>
+                                <button class="size-btn" data-size="large">Large</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-quantity">
+                        <label>Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" onclick="adjustQuantity(-1)">-</button>
+                            <input type="number" id="detail-quantity" value="1" min="1" max="10">
+                            <button class="qty-btn" onclick="adjustQuantity(1)">+</button>
+                        </div>
+                        <div class="stock-info">
+                            <i class="fas fa-check-circle"></i>
+                            <span>In Stock • Ships in 2-3 days</span>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn-primary btn-large" id="detail-add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="btn-secondary btn-large" onclick="addToWishlist()">
+                            <i class="fas fa-heart"></i> Add to Wishlist
+                        </button>
+                    </div>
+
+                    <div class="product-shipping">
+                        <div class="shipping-item">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <strong>Free Shipping</strong>
+                                <span>On orders over $100</span>
+                            </div>
+                        </div>
+                        <div class="shipping-item">
+                            <i class="fas fa-undo"></i>
+                            <div>
+                                <strong>30-Day Returns</strong>
+                                <span>Easy returns & exchanges</span>
+                            </div>
+                        </div>
+                        <div class="shipping-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>2 Year Warranty</strong>
+                                <span>Quality guaranteed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-detail-specs">
+                        <h4>Product Details</h4>
+                        <div class="specs-grid">
+                            <div class="spec-item" id="detail-dimensions">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>Dimensions: 80" x 30" x 36"</span>
+                            </div>
+                            <div class="spec-item" id="detail-colors">
+                                <i class="fas fa-palette"></i>
+                                <span>Available in 3 colors</span>
+                            </div>
+                            <div class="spec-item" id="detail-material">
+                                <i class="fas fa-couch"></i>
+                                <span>Solid oak wood construction</span>
+                            </div>
+                            <div class="spec-item" id="detail-weight">
+                                <i class="fas fa-weight"></i>
+                                <span>Weight: 45 lbs</span>
+                            </div>
+                            <div class="spec-item" id="detail-sku">
+                                <i class="fas fa-barcode"></i>
+                                <span>SKU: MOD-SOF-001</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Care Instructions -->
+                    <div class="product-care" id="detail-care" style="display: none;">
+                        <h4><i class="fas fa-sparkles"></i> Care Instructions</h4>
+                        <p></p>
+                    </div>
+
+                    <!-- Reviews Section -->
+                    <div class="product-reviews-section">
+                        <div class="reviews-header">
+                            <h4>Customer Reviews</h4>
+                            <button class="btn-primary btn-write-review">
+                                <i class="fas fa-pen"></i> Write a Review
+                            </button>
+                        </div>
+                        <div class="reviews-summary">
+                            <div class="rating-overview">
+                                <div class="rating-number">4.8</div>
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div class="rating-count" id="reviews-count">256 Reviews</div>
+                            </div>
+                            <div class="rating-breakdown">
+                                <div class="rating-bar">
+                                    <span>5 ★</span>
+                                    <div class="bar"><div class="fill" style="width: 75%"></div></div>
+                                    <span>75%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 ★</span>
+                                    <div class="bar"><div class="fill" style="width: 15%"></div></div>
+                                    <span>15%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 ★</span>
+                                    <div class="bar"><div class="fill" style="width: 6%"></div></div>
+                                    <span>6%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 ★</span>
+                                    <div class="bar"><div class="fill" style="width: 3%"></div></div>
+                                    <span>3%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 ★</span>
+                                    <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                    <span>1%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-list" id="reviews-container">
+                            <!-- Reviews will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Related Products -->
+                    <div class="related-products-section" id="related-products">
+                        <h4>You May Also Like</h4>
+                        <div class="related-products-grid">
+                            <!-- Related products will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div class="product-social">
+                        <span>Share this product:</span>
+                        <div class="social-buttons">
+                            <button class="social-btn" onclick="shareProduct('facebook')">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button class="social-btn" onclick="shareProduct('twitter')">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="social-btn" onclick="shareProduct('pinterest')">
+                                <i class="fab fa-pinterest"></i>
+                            </button>
+                            <button class="social-btn" onclick="shareProduct('email')">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+        // Load products on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProducts();
+            setupEventListeners();
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>
